@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crossover',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,7 +85,7 @@ STATIC_URL = '/static/'
 
 
 
-# Custom
+# Heroku
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
