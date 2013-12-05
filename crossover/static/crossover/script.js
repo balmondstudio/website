@@ -5,7 +5,7 @@ var crossover = (function() {
   var state = Array(6);
 
   var config = {
-    source: 'http://localhost:5000/crossover/data/',
+    source: 'http://blooming-hamlet-8894.herokuapp.com/crossover/data',
     screen_name: 'emmanouilmatsis'
   };
 
