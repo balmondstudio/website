@@ -8,5 +8,6 @@ urlpatterns = patterns('',
     # url(r'^$', 'balmondstudio.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
+    url(r'^crossover/', include('crossover.urls', namespace='crossover')),
     url(r'^admin/', include(admin.site.urls)),
 )

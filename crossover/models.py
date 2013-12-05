@@ -1,3 +1,9 @@
 from django.db import models
 
-# Create your models here.
+class Tweet(models.Model):
+  term = models.TextField(unique=True)
+  text = models.TextField()
+  screen_name = models.TextField()
+
+  def __unicode__(self):
+    return self.term

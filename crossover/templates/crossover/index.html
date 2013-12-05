@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    {% load staticfiles %}
+    <meta charset="utf-8">
+
+    <title>Cecil Balmond - Crossover</title>
+
+    <link rel="stylesheet" href="{% static 'crossover/reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'crossover/style.css' %}" />
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="{% static 'crossover/raphael-min.js' %}"></script>
+    <script src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
+    <script src="http://canvg.googlecode.com/svn/trunk/StackBlur.js"></script>
+    <script src="http://canvg.googlecode.com/svn/trunk/canvg.js"></script>
+    <script src="{% static 'crossover/script.js' %}"></script>
+
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+    <header>
+
+      <h1>
+        CROSSOVER
+      </h1>
+      <h2>
+        Cecil Balmond
+      </h2>
+
+    </header>
+
+    <div id="content">
+
+      <div id="graphics">
+      </div>
+
+      <div id="tweet">
+        {% if tweets %}
+        <ul>
+          {% for tweet in tweets %}
+            <li>
+              <h3>{{ tweet.term }}</h3>
+              <p>{{ tweet.text }}</p>
+              </br>
+            </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+          <p>No Tweets are available.</p>
+        {% endif %}
+      </div>
+
+    </div>
+
+    <footer>
+
+      <div>&#169; 2013 <a href="http://www.balmondstudio.com">Balmond Studio</a></div>
+
+    </footer>
+
+    <div id='form'>
+      <form>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <br>
+        <input type="text" name="username" placeholder="Username">
+        <br>
+        <button type="button">Enter</button>
+      </form>
+    </div>
+
+  </body>
+
+</html>

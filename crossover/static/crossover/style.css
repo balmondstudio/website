@@ -1,0 +1,183 @@
+html
+{
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-width: 640px;
+}
+
+body
+{
+  width: 100%;
+  height: 100%;
+
+  font-weight: normal;
+  font-size: 10px;
+  font-family: arial, helvetica, sans-serif;
+  color: black;
+}
+
+header
+{
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: 0;
+}
+
+header > h1
+{
+  margin: 0px 10px 10px 10px;
+
+  text-shadow: 0px 1px 1px white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  color: black;
+}
+
+header > h2
+{
+  margin: 10px 10px 10px 10px;
+
+  text-shadow: 0px 1px 1px white;
+  text-align: center;
+  font-weight: normal;
+  font-size: 45px;
+  color: black;
+}
+
+div#content
+{
+  position: absolute;
+  top: 175px;
+  right: 0;
+  bottom: 40px;
+  left: 0;
+}
+
+div#content > div#graphics
+{
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+div#content > div#tweet
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 40%;
+  height: 75%;
+
+  margin:auto;
+
+  font-family: courier, monospace;
+  font-weight: normal;
+  font-size: 15px;
+  color: black;
+
+  overflow: hidden;
+}
+
+div#content > div#tweet > ul > li > h3
+{
+  font-weight: bold;
+}
+
+footer
+{
+  position: absolute;
+  bottom: 0px;
+
+  width: 100%;
+}
+
+footer > div
+{
+  float: right;
+  margin: 15px 20px;
+
+  font-weight: bold;
+  font-size: 10px;
+  color: #c0c0c0;
+  color: black;
+}
+
+footer > div > a
+{
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 10px;
+  color: #c0c0c0;
+  color: black;
+}
+
+div#form
+{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  opacity: 0.9;
+
+  background: #c18384;
+
+  background: -moz-linear-gradient(top,  #c18384 0%, #a0a6c8 20%, #91b593 40%, #e2d7a8 60%, #aa99c3 80%, #f2dce7 100%);
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c18384), color-stop(20%,#a0a6c8), color-stop(40%,#91b593), color-stop(60%,#e2d7a8), color-stop(80%,#aa99c3), color-stop(100%,#f2dce7));
+
+  background: -webkit-linear-gradient(top,  #c18384 0%,#a0a6c8 20%,#91b593 40%,#e2d7a8 60%,#aa99c3 80%,#f2dce7 100%);
+
+  background: -o-linear-gradient(top,  #c18384 0%,#a0a6c8 20%,#91b593 40%,#e2d7a8 60%,#aa99c3 80%,#f2dce7 100%);
+
+  background: -ms-linear-gradient(top,  #c18384 0%,#a0a6c8 20%,#91b593 40%,#e2d7a8 60%,#aa99c3 80%,#f2dce7 100%);
+
+  background: linear-gradient(to bottom,  #c18384 0%,#a0a6c8 20%,#91b593 40%,#e2d7a8 60%,#aa99c3 80%,#f2dce7 100%);
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c18384', endColorstr='#f2dce7',GradientType=0 );
+}
+
+form
+{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  width: 300px;
+  height: 400px;
+
+  margin: auto;
+
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+}
+
+form > input
+{
+  width: inherit;
+
+  margin: 20px 0px 20px 0px;
+  padding: 0px 0px 0px 2px;
+}
+
+form > button
+{
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #aaaaaa;
+}
