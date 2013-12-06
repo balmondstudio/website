@@ -30,7 +30,7 @@ var crossover = (function() {
     $.each($('div#content:first').data(), function(key, value) {
       if (value.fields.text != data[key].fields.text) {
         update(key, data);
-        if (data[key].fields.screen_name == config.screen_name) {
+        if (data[key].fields.screen_name == screen_name) {
           lock();
         }
       }
