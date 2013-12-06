@@ -6,7 +6,7 @@ var crossover = (function() {
 
   var config = {
     //source: 'http://0.0.0.0:5000/data',
-    source: 'http://blooming-hamlet-8894.herokuapp.com/data',
+    source: 'http://crossover.balmondstudio.com/data',
     screen_name: null,
     lock: false
   };
