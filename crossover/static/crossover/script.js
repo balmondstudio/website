@@ -2,66 +2,51 @@
 var crossover = (function() {
 
   var interval;
-  var state = Array(6);
+  var screen_name;
 
   var config = {
     //source: 'http://0.0.0.0:5000/data',
     source: 'http://crossover.balmondstudio.com/data',
-    screen_name: null,
-    lock: false
   };
 
   var init = function() {
     $('div#form > form > button').click(function() {
-      config.screen_name = $('div#form > form > input').val();
-      if (config.screen_name) {
+      screen_name = $('div#form > form > input').val();
+      if (screen_name) {
         $('div#form').fadeOut(1000);
       }
     });
 
     graphics.init();
 
-    $.getJSON(config.source, function(data) {
-      $('div#content:first').data(data);
-      load();
-    });
+    interval = window.setInterval(load, 1000);
   };
 
   var load = function() {
-    $.getJSON(config.source, function(data) {
-
-      console.log('=> New Request');
-
-      $.each($('div#content:first').data(), function(key, value) {
-        if (value.fields.text != data[key].fields.text) {
-          update(key, data);
-
-          console.log(data[key].fields.screen_name);
-
-          if (data[key].fields.screen_name == config.screen_name) {
-            config.lock = true;
-          }
-        }
-      });
-
-      $('div#content:first').data(data);
-      if (config.lock) {
-        lock();
-      } else {
-        load();
-      }
-    });
+    $.getJSON(config.source, consume);
   };
 
-  var lock = function() {
-    //window.clearInterval(interval);
-    $('div#tweet').fadeOut(1000);
+  var consume = function(data) {
+    $.each($('div#content:first').data(), function(key, value) {
+      if (value.fields.text != data[key].fields.text) {
+        update(key, data);
+        if (data[key].fields.screen_name == config.screen_name) {
+          lock();
+        }
+      }
+    });
+    $('div#content:first').data(data);
   };
 
   var update = function(key, data) {
     $('li>h3').eq(key).css('color', graphics.config.stroke.color[key]);
     $('li>p').eq(key).text(data[key].fields.text);
     graphics.update(key);
+  };
+
+  var lock = function() {
+    window.clearInterval(interval);
+    $('div#tweet').fadeOut(1000);
   };
 
   return {
