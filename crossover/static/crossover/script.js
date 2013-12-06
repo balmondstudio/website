@@ -5,53 +5,56 @@ var crossover = (function() {
   var state = Array(6);
 
   var config = {
-    source: 'http://blooming-hamlet-8894.herokuapp.com/crossover/data',
-    screen_name: 'emmanouilmatsis'
+    source: 'http://0.0.0.0:5000/data',
+    //source: 'http://0.0.0.0:5000/crossover/data',
+    screen_name: null,
+    lock: false
   };
 
   var init = function() {
     $('div#form > form > button').click(function() {
-      $('div#form').fadeOut(1151);
-      screen_name = $('div#form > form > input').val();
+      config.screen_name = $('div#form > form > input').val();
+      if (config.screen_name) {
+        $('div#form').fadeOut(1000);
+      }
     });
 
     graphics.init();
 
     $.getJSON(config.source, function(data) {
       $('div#content:first').data(data);
-      interval = window.setInterval(load, 1000);
+      load();
     });
   };
 
   var load = function() {
     $.getJSON(config.source, function(data) {
+
+      console.log('=> New Request');
+
       $.each($('div#content:first').data(), function(key, value) {
         if (value.fields.text != data[key].fields.text) {
-          if (state[key] === undefined) {
-            state[key] = 'global';
-            update(key, data);
-          } else if (state[key] == 'global') {
-            if (data[key].fields.screen_name == config.screen_name) {
-              state[key] = 'local';
-            }
-            update(key, data);
-          } else if (state[key] == 'local') {
-            if (data[key].fields.screen_name == config.screen_name) {
-              update(key, data);
-            }
+          update(key, data);
+
+          console.log(data[key].fields.screen_name);
+
+          if (data[key].fields.screen_name == config.screen_name) {
+            config.lock = true;
           }
         }
       });
-      $('div#content:first').data(data);
 
-      if (isState('local')) {
-        unlock();
+      $('div#content:first').data(data);
+      if (config.lock) {
+        lock();
+      } else {
+        load();
       }
     });
   };
 
-  var unlock = function() {
-    window.clearInterval(interval);
+  var lock = function() {
+    //window.clearInterval(interval);
     $('div#tweet').fadeOut(1000);
   };
 
@@ -59,19 +62,6 @@ var crossover = (function() {
     $('li>h3').eq(key).css('color', graphics.config.stroke.color[key]);
     $('li>p').eq(key).text(data[key].fields.text);
     graphics.update(key);
-  };
-
-  var isState = function(input) {
-    var output = true;
-
-    $.each(state, function(key, value) {
-      if (value != input) {
-        output = false;
-        return false;
-      }
-    });
-
-    return output;
   };
 
   return {
@@ -107,7 +97,7 @@ var graphics = (function() {
       color: ['#7a1719', '#3043a1', '#2a622e', '#fdd318', '#532c8d', '#f9a5ce'],
       join: 'round', // bevel, round, miter
       opacity: 0.9,
-      width: 0.3,
+      width: 0.5,
       reset: 'black'
     },
     animation: {
