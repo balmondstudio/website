@@ -5,8 +5,8 @@ var crossover = (function() {
   var state = Array(6);
 
   var config = {
-    source: 'http://0.0.0.0:5000/data',
-    //source: 'http://0.0.0.0:5000/crossover/data',
+    //source: 'http://0.0.0.0:5000/data',
+    source: 'blooming-hamlet-8894.herokuapp.com/data',
     screen_name: null,
     lock: false
   };
