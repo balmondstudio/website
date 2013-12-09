@@ -1,5 +1,29 @@
-// Crossover Module
-var crossover = (function() {
+// UI
+var ui = (function() {
+
+  var config = {
+  };
+
+  var init = function() {
+    $('div#about').click(function() {
+      $(this).fadeOut(1000);
+    });
+
+    $('div#content > div#text > a#about_button').click(function() {
+      $('div#about').fadeIn(1000);
+    });
+  };
+
+  return {
+    init: init,
+    config: config
+  };
+
+})();
+
+
+// Twitter Module
+var twitter = (function() {
 
   var interval;
   var screen_name;
@@ -46,7 +70,7 @@ var crossover = (function() {
 
   var lock = function() {
     window.clearInterval(interval);
-    $('div#tweet').fadeOut(1000);
+    $('div#tweet').fadeOut(10000);
   };
 
   return {
@@ -82,7 +106,7 @@ var graphics = (function() {
       color: ['#7a1719', '#3043a1', '#2a622e', '#fdd318', '#532c8d', '#f9a5ce'],
       join: 'round', // bevel, round, miter
       opacity: 0.9,
-      width: 0.5,
+      width: 0.4,
       reset: 'black'
     },
     animation: {
@@ -200,5 +224,6 @@ var graphics = (function() {
 
 // Document Ready
 $(document).ready(function() {
-  crossover.init();
+  ui.init();
+  twitter.init();
 });

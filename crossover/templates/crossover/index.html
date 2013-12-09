@@ -8,6 +8,7 @@
 
     <title>Cecil Balmond - Crossover</title>
 
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="{% static 'crossover/reset.css' %}" />
     <link rel="stylesheet" href="{% static 'crossover/style.css' %}" />
 
@@ -27,14 +28,6 @@
 
   <body>
 
-    <!--Tweet-->
-    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://crossover.balmondstudio.com" data-text="..." data-via="balmondstudio" data-size="large" data-count="none" data-hashtags="crossoverbook">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-    <!--Follow-->
-    <a href="https://twitter.com/balmondstudio" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @balmondstudio</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
     <header>
 
       <h1>
@@ -48,10 +41,12 @@
 
     <div id="content">
 
+      <!--Graphics-->
       <div id="graphics">
       </div>
 
-      <div id="tweet">
+      <!--Text-->
+      <div id="text">
         {% if tweets %}
         <ul>
           {% for tweet in tweets %}
@@ -65,6 +60,12 @@
         {% else %}
           <p>No Tweets are available.</p>
         {% endif %}
+
+        <!--Tweet-->
+        <a id="tweet_button" href="https://twitter.com/share?url=http%3A%2F%2Fcrossover.balmondstudio.com&text=...%0A%40crossoverbook%0A%23balmondstudio%0A" target="_blank" text="Manos Matsis">Tweet</a>
+
+        <!--About-->
+        <a href="#" id="about_button">About</button>
       </div>
 
     </div>
@@ -75,7 +76,8 @@
 
     </footer>
 
-    <div id='form'>
+    <!--Registration-->
+    <div id='form' class='dialog'>
       <form>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         <br>
@@ -83,6 +85,18 @@
         <br>
         <button type="button">Enter</button>
       </form>
+    </div>
+
+    <!--About-->
+    <div id='about' class='dialog'>
+      <div>
+        <h1>ABOUT</h1>
+        <h2>Discription</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </br>
+        <h2>Instructions</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
     </div>
 
   </body>

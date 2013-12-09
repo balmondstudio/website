@@ -1,3 +1,15 @@
+@font-face
+{
+  font-family: crossover_font;
+  src: url('AkzidenzGrotesk-Cond.otf');
+}
+
+@font-face
+{
+  font-family: cecilbalmond_font;
+  src: url('Berthold.ttf');
+}
+
 html
 {
   position: relative;
@@ -30,10 +42,11 @@ header > h1
 {
   margin: 0px 10px 10px 10px;
 
+  font-family: crossover_font;
   text-shadow: 0px 1px 1px white;
   text-align: center;
-  font-weight: bold;
-  font-size: 60px;
+  font-weight: normal;
+  font-size: 70px;
   color: black;
 }
 
@@ -41,17 +54,19 @@ header > h2
 {
   margin: 10px 10px 10px 10px;
 
+  font-family: cecilbalmond_font;
   text-shadow: 0px 1px 1px white;
   text-align: center;
-  font-weight: normal;
-  font-size: 45px;
+  font-weight: bold;
+  font-size: 40px;
   color: black;
+  letter-spacing: 5px;
 }
 
 div#content
 {
   position: absolute;
-  top: 175px;
+  top: 170px;
   right: 0;
   bottom: 40px;
   left: 0;
@@ -64,9 +79,10 @@ div#content > div#graphics
   bottom: 0px;
   left: 0px;
   right: 0px;
+  z-index: -1;
 }
 
-div#content > div#tweet
+div#content > div#text
 {
   position: absolute;
   top: 0;
@@ -87,9 +103,52 @@ div#content > div#tweet
   overflow: hidden;
 }
 
-div#content > div#tweet > ul > li > h3
+div#content > div#text > ul > li > h3
 {
   font-weight: bold;
+}
+
+div#content > div#text > a#tweet_button
+{
+  position: absolute;
+  right: 51%;
+  bottom: 0;
+  left: 0;
+
+  padding: 5px 0px 5px 0px;
+}
+
+div#content > div#text > a#about_button
+{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 51%;
+
+  padding: 5px 0px 5px 0px;
+}
+
+div#content > div#text > a
+{
+  -webkit-transition: background-color 350ms ease;
+  -moz-transition: background-color 350ms ease;
+  -o-transition: background-color 350ms ease;
+  transition: background-color 350ms ease;
+
+  font-family: courier, monospace;
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+
+  background-color: #000;
+}
+
+div#content > div#text > a:hover
+{
+  color: #000;
+  background-color: #fff;
 }
 
 footer
@@ -120,7 +179,7 @@ footer > div > a
   color: black;
 }
 
-div#form
+div.dialog
 {
   position: absolute;
   top: 0px;
@@ -128,7 +187,7 @@ div#form
   bottom: 0px;
   left: 0px;
 
-  opacity: 0.9;
+  opacity: 0.95;
 
   background: #c18384;
 
@@ -147,7 +206,7 @@ div#form
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c18384', endColorstr='#f2dce7',GradientType=0 );
 }
 
-form
+div#form > form
 {
   position: absolute;
   top: 0px;
@@ -156,7 +215,7 @@ form
   left: 0px;
 
   width: 300px;
-  height: 400px;
+  height: 220px;
 
   margin: auto;
 
@@ -164,9 +223,10 @@ form
   font-size: 14px;
   text-align: center;
   line-height: 20px;
+  overflow: hidden;
 }
 
-form > input
+div#form > form > input
 {
   width: inherit;
 
@@ -174,10 +234,65 @@ form > input
   padding: 0px 0px 0px 2px;
 }
 
-form > button
+div#form > form > button
 {
-  background-color: white;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #aaaaaa;
+  width: 100%;
+  height: 25px;
+
+  display: block;
+  background-color: #000;
+  border: 0 none;
+  cursor: pointer;
+
+  font-family: courier, monospace;
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+
+div#about
+{
+  display: none;
+}
+
+div#about > div
+{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  width: 50%;
+  height: 50%;
+
+  margin: auto;
+
+  overflow: auto;
+}
+
+div#about > div > h1
+{
+  margin: 20px;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+
+div#about > div > h2
+{
+  margin: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+
+div#about > div > p
+{
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
 }
