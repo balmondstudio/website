@@ -70,7 +70,7 @@ var twitter = (function() {
 
   var lock = function() {
     window.clearInterval(interval);
-    $('div#tweet').fadeOut(10000);
+    $('div#tweet').fadeOut(5000);
   };
 
   return {
