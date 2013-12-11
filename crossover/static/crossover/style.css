@@ -219,18 +219,36 @@ div#form > form
 
   margin: auto;
 
+  overflow: hidden;
+}
+
+div#form > form > h1
+{
+  margin: 0px 0px 40px 0px;
+
+  font-family: courier, monospace;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  text-align: center;
+}
+
+div#form > form > p
+{
+  margin: 0px 0px 10px 0px;
+
+  font-family: courier, monospace;
   font-weight: normal;
   font-size: 14px;
+  color: #000;
   text-align: center;
-  line-height: 20px;
-  overflow: hidden;
 }
 
 div#form > form > input
 {
   width: inherit;
 
-  margin: 20px 0px 20px 0px;
+  margin: 0px 0px 10px 0px;
   padding: 0px 0px 0px 2px;
 }
 
@@ -243,13 +261,6 @@ div#form > form > button
   background-color: #000;
   border: 0 none;
   cursor: pointer;
-
-  font-family: courier, monospace;
-  font-weight: bold;
-  font-size: 15px;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
 }
 
 div#about
@@ -265,8 +276,8 @@ div#about > div
   bottom: 0px;
   left: 0px;
 
-  width: 50%;
-  height: 50%;
+  width: 75%;
+  height: 75%;
 
   margin: auto;
 
@@ -275,7 +286,7 @@ div#about > div
 
 div#about > div > h1
 {
-  margin: 20px;
+  margin: 0px 0px 40px 0px;
   font-weight: bold;
   font-size: 40px;
   text-align: center;
@@ -283,7 +294,7 @@ div#about > div > h1
 
 div#about > div > h2
 {
-  margin: 10px;
+  margin: 20px 0px 10px 0px;
   font-weight: bold;
   font-size: 14px;
   text-align: center;
