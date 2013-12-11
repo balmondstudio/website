@@ -35,7 +35,7 @@ var twitter = (function() {
 
   var init = function() {
     $('div#form > form > button').click(function() {
-      screen_name = $('div#form > form > input').val();
+      screen_name = $('div#form > form > input').val().toLowerCase();
       if (screen_name) {
         $('div#form').fadeOut(1000);
       }
