@@ -41,6 +41,16 @@ var twitter = (function() {
       }
     });
 
+    $('div#form > form > input').keypress(function(event) {
+      if (event.which == 13) {
+        event.preventDefault();
+        screen_name = $('div#form > form > input').val().toLowerCase();
+        if (screen_name) {
+          $('div#form').fadeOut(1000);
+        }
+      }
+    });
+
     graphics.init();
 
     interval = window.setInterval(load, 1000);
